@@ -23,5 +23,8 @@ int main(){
 	ptr->printfunc();
 
 	return 0;
-
 }
+
+/* pointer class member 
+int class_name ::*ptr_name = &class_name :: member_name
+*/
