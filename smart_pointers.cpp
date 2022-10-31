@@ -16,12 +16,20 @@ using namespace std;
                   * They have to be unique, they cannot be copyed to another pointer etc,
                     (because when that goes out of scope it gets deleted and were literally
                      pointer to nothing)
+		  * You cannot copy unique pointer but you can tranfer the ownership to another
+		    unique pointer with move() funtion
+		    
+		    e.g unique_ptr<int> p1 = make_unique<int>(3);
+		        unique_ptr<int> p2 = move(p1);
+			cout<<*p2<<endl;
     
    shared pointer:
                   * It uses reference counting, it keeps count of how many references you
                     have to the pointer, when the reference count gets to 0 it gets deleted
                   * just always make use of make_shared<int>() or make_unique<int>()
                   * when you make shared pointer it increments ref count
+		  * use_count() gives the number of shared pointer to that pointer
+		    e.g ptr.use_count();
    weak pointer:
                   * It can copy a shared pointer except that it doesn't increment
                     the ref count
