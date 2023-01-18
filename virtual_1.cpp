@@ -1,6 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+  when we declear virtual function every class which has virtual function or every derived class which has virtual function, a Vtable is created for it,
+  vtable links virtual functions with their respective class, with the help of vpointer, vpointer is automatically created for very class that that virtual in it.
+  vpointer gets created in the constructor.
+  
+  virtual functions are static arrays
+*/
+
 class base{
 public:
     void display(){
